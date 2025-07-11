@@ -1,0 +1,16 @@
+<h1>{{ recipe.title }}</h1>
+<p><strong>Description:</strong> {{ recipe.description }}</p>
+<p><strong>Ingredient:</strong>
+    <ul>
+        {% for Ing in ingredients %}
+        <li>{{ Ing.name }}</li>
+        {% endfor %} 
+    </ul>
+</p>    
+<p><strong>Instructions:</strong> {{ recipe.instruction }}</p>
+<p><strong>Preparation Time:</strong> {{ recipe.prep_time }}</p>
+<p><strong>Cooking Time:</strong> {{ recipe.cooking_time }}</p>
+<p><strong>Difficulty Level:</strong> {{ recipe.difficulty_level }}</p>
+<a href="{% url 'update_recipe' recipe.id %}">Edit</a> |
+<a href="{% url 'delete_recipe' recipe.id %}">Delete</a> |
+<a href="{% url 'recipe_list' %}">Back to List</a>
